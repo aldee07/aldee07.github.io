@@ -249,93 +249,26 @@
         </a>
     </div>
 
-    <style>
-        #question {
-            display: none; 
-            position: fixed; 
-            z-index: 7000; 
-            top: 0; 
-            left: 0; 
-            width: 100%; 
-            height: 100%; 
-            background: white; 
-            text-align: center; 
-            font-family: 'Gloria Hallelujah', cursive; 
-            font-size: 16px; 
-            padding-top: 30px;
-        }
+    <div id="question" style="display: none; position: fixed; z-index: 7000; top: 0; left: 0; width: 100%; height: 100%; background: white; text-align: center; font-family: 'Gloria Hallelujah', cursive; font-size: 16px; padding-top: 30px;">
+        <div id="q">
+            <p style="font-weight: bolder; margin-bottom: 30px;">Hi Beshy!</p>
+            <p>Can I spend the rest of my lifetime with knowing that<br /> I belong to you and that you belong to me?</p>
+            <p>
+                <button id="btnyes" type="button" class="btn" style="width: 100px; height: 100px;">Yes</button> 
+                <button id="btnno" type="button" class="btn">No</button> 
+            </p>
+        </div>
 
-        .slide {
-            display: none;
-        }
-
-        .slide ul {
-            list-style: none;
-            border-top: 1px solid #ddd;
-            width: 500px;
-            padding: 30px;
-            margin: 0 auto;
-        }
-    </style>
-
-    <div id="question">
-        <div class="slide" id="s1">
-            <ul>
-                <li>Walking</li>
-                <li>Travel</li>
-                <li>Holidays</li>
-                <li>Stress</li>
-                <li>Weekends</li>
-                <li>Talking</li>
-                <li>Play</li>
-                <li>Summer</li>
-                <li>Food trip</li>
-                <li>Movies</li>
-                <li>Dinner</li>
-                <li>Adventures</li>
-                <li>Sadness</li>
-                <li>Wasting time</li>
-                <li>Struggle</li>
-                <li>Thrills</li>
-            </ul>
-            <button class="btn" data-act="#s2">Next &rarr;</button>
+        <div id="yes" style="display: none; margin-top: 20px;">
+            <p style="font-size: 40px">YAHOOOoooOOOo!!!<br />OMG!!!!</p>
+            <p style="font-size: 40px">THANK YOU! THANK YOU! THANK YOU!</p>
+            <p style="font-size: 13px;"><br /></p>
+            <p style="font-size: 40px">I LOVE YOU AIVY!</p>
+            <p><button type="button" class="btn btnclose">Close</button>
         </div>
-        <div class="slide" id="s2">
-            <ul>
-                <li>...and many more!!!</li>
-            </ul>
-            <button class="btn" data-act="#s1">&larr; Back</button>
-            <button class="btn" data-act="#s3">Next &rarr;</button>
-        </div>
-        <div class="slide" id="s3">
-            <ul>
-                <li>can we do these things together?</li>
-            </ul>
-            <button class="btn" data-act="#s6">No :(</button>
-            <button class="btn" data-act="#s4">Yes!</button>
-        </div>
-        <div class="slide" id="s4">
-            <ul>
-                <li>Beshy, can I spend the rest of my lifetime with knowing that I belong to you and that you belong to me?</li>
-            </ul>
-            <button class="btn" data-act="#s6">No :(</button>
-            <button class="btn" data-act="#s5">Yes!</button>
-        </div>
-        <div class="slide" id="s5">
-            <ul>
-                <li>YAAaHoOOooOoo!</li>
-                <li>&hearts; &hearts; &hearts;</li>
-                <li>I LOVE YOU!!!</li>
-                <li>&hearts; &hearts; &hearts;</li>
-                <li>Now, I am the luckiest guy in the planet!</li>
-                <li>I love you Aivy! Thank you!</li>
-            </ul>
-        </div>
-        <div class="slide" id="s6">
-            <ul>
-                <li>No worries beshy! I won't feel bad about it :)</li>
-            </ul>
-            <button class="btn bclose">Close</button>
+        <div id="no" style="display: none; margin-top: 50px;">
+            <p>No worries beshy!!! I won't feel bad about it! <br />In case you change your mind, you can always reload this page anytime.<br /></p>
+            <p><button type="button" class="btn btnclose">Close</button>
         </div>
     </div>
 
@@ -364,22 +297,26 @@
                 clicks++;
 
                 if (clicks === 7) {
-                    clicks = 0;
+                    $('#question').fadeIn();
 
-                    $('#question, #s1').fadeIn();
+                    clicks = 0;
                 }
             });
 
-            $('.slide .btn').click(function() {
-                var next = $(this).data('act');
-
-                $('.slide').hide();
-
-                $(next).fadeIn(1000);
+            $('#btnyes').click(function() {
+                $('#yes').fadeIn();
+                $('#no').hide();
+                $('#q').hide();
             });
 
-            $('.slide .btn.bclose').click(function() {
-                location.reload(true);
+            $('#btnno').click(function() {
+                $('#no').fadeIn();
+                $('#yes').hide();
+                $('#q').hide();
+            });
+
+            $('.btnclose').click(function() {
+                window.location.reload(true);
             });
         })();
     </script>

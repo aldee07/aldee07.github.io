@@ -1,0 +1,280 @@
+@import url("/fonts/neucha/neucha.css");
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("../images/background4.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+body h1 {
+  font-family: "Neucha", cursive;
+  text-transform: none;
+}
+
+.fade-in {
+  animation: fadeInAnimation 1s ease-in-out;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.back {
+  cursor: pointer;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.invitation {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.invitation .message {
+  width: 80vw;
+  margin-bottom: 7vh;
+  font-size: 0.9rem;
+  letter-spacing: 0.1rem;
+}
+.invitation .date {
+  display: grid;
+  grid-template-areas: ". month ." "day date time" ". year .";
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.invitation .date > div {
+  font-size: 0.8rem;
+  text-align: center;
+  letter-spacing: 0.3rem;
+}
+.invitation .date .month {
+  grid-area: month;
+}
+.invitation .date .day {
+  grid-area: day;
+}
+.invitation .date .dateValue {
+  grid-area: date;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
+  font-size: 3rem;
+}
+.invitation .date .time {
+  grid-area: time;
+  letter-spacing: 0.2;
+}
+.invitation .date .year {
+  grid-area: year;
+  letter-spacing: 0.2;
+}
+.invitation .venue {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+  margin-top: 5vh;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+}
+.invitation .links {
+  display: flex;
+  gap: 2vw;
+  padding-top: 15vh;
+  justify-content: center;
+  align-items: center;
+}
+.invitation .links > a {
+  font-size: 0.7rem;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+.invitation .links > a:not(:last-child) {
+  padding-right: 0.7rem;
+}
+@media (min-width: 376px) {
+  .invitation .date > div {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 576px) {
+  .invitation .date > div {
+    font-size: 1.5rem;
+  }
+  .invitation .message, .invitation .venue {
+    letter-spacing: 0.2rem;
+    font-size: 1rem;
+  }
+  .invitation h1 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .invitation .date > div {
+    font-size: 2rem;
+  }
+  .invitation .message, .invitation .venue {
+    font-size: 1.2rem;
+  }
+}
+
+.entourage {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.entourage .roles {
+  width: 100%;
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.entourage .roles::-webkit-scrollbar {
+  display: none;
+}
+.entourage .roles table {
+  width: 90%;
+  margin: auto;
+}
+.entourage .roles th, .entourage .roles td {
+  width: 50%;
+  font-size: 0.7em;
+}
+.entourage .roles th {
+  padding-bottom: 1rem;
+  letter-spacing: 0.2rem;
+}
+.entourage .roles table:not(:first-child) th {
+  padding-top: 3rem;
+}
+.entourage .roles td {
+  text-transform: none;
+}
+@media (min-width: 376px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 576px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 1.1rem;
+  }
+}
+@media (min-width: 920px) {
+  .entourage .roles th, .entourage .roles td {
+    font-size: 1.3rem;
+  }
+}
+@media (min-width: 1240px) {
+  .entourage .roles table {
+    width: 60%;
+  }
+}
+@media (min-width: 1366px) {
+  .entourage .roles table {
+    width: 50%;
+  }
+}
+@media (min-width: 1780px) {
+  .entourage .roles table {
+    width: 40%;
+  }
+}
+
+.attire {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.attire .details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 90vw;
+  height: 75vh;
+}
+.attire .details > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+.attire .details > div .pic {
+  width: 40%;
+}
+.attire .details > div .text {
+  width: 50%;
+  padding: 0 20px;
+  border-left: 1px solid rgba(255, 255, 255, 0.3);
+}
+@media (min-width: 576px) {
+  .attire .details {
+    width: 70vw;
+  }
+}
+@media (min-width: 768px) {
+  .attire .details {
+    width: 60vw;
+  }
+}
+@media (min-width: 920px) {
+  .attire .details {
+    width: 50vw;
+  }
+}
+@media (min-width: 1240px) {
+  .attire .details {
+    width: 40vw;
+  }
+}
+@media (min-width: 1366px) {
+  .attire .details {
+    width: 30vw;
+  }
+}
+@media (min-width: 1780px) {
+  .attire table {
+    width: 40%;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */
